@@ -1,10 +1,11 @@
 import React from 'react'
-import style from './common/test.module.scss'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div class={style.lol}>
-      <p>React here!</p>
+    <div>
+      <Header title="Hello world!" />
+      <p>Body text</p>
     </div>
   )
 }

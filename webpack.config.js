@@ -24,7 +24,6 @@ module.exports = {
       '~': path.resolve(__dirname, './'),
     },
     extensions: ['.js', '.jsx'],
-    symlinks: false,
   },
 
   stats: 'errors-only',
