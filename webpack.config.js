@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
 
 module.exports = {
   stats: 'errors-only',
@@ -24,22 +25,30 @@ module.exports = {
       {
         test: /\.scss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
           {
-            loader: "css-loader",
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              modules: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: {
+                mode: 'local',
+                localIdentName: '[local]--[hash:base64:7]',
+              },
               importLoaders: 1,
             },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
+              sourceMap: true,
               postcssOptions: {
                 plugins: [
                   [
-                    "autoprefixer",
+                    'autoprefixer',
                     {
                       // Options
                     },
@@ -49,7 +58,13 @@ module.exports = {
             },
           },
           // Compiles Sass to CSS
-          "sass-loader",
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, './src/common/scss/index.scss'),
+            },
+          },
         ],
       },
     ],

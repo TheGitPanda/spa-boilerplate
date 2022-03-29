@@ -1,8 +1,9 @@
 import React from 'react'
+import style from './common/test.module.scss'
 
 const App = () => {
   return (
-    <div>
+    <div class={style.lol}>
       <p>React here!</p>
     </div>
   )
