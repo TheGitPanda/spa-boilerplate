@@ -2,6 +2,9 @@ body {
   margin: 0 auto;
   width: 600px;
   color: $color;
-  background: black;
   user-select: none;
+  background: black no-repeat;
+  background-size: cover;
+  word-break: break-word;
+  float:left;
 }

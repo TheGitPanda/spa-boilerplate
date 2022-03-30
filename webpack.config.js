@@ -3,6 +3,7 @@ const path = require('path')
 const htmlConfig = require('./webpack/html.config')
 const jsConfig = require('./webpack/js.config')
 const sassConfig = require('./webpack/sass.config')
+const imagesConfig = require('./webpack/images.config')
 
 module.exports = {
 
@@ -11,6 +12,7 @@ module.exports = {
       htmlConfig.rule,
       jsConfig.rule,
       sassConfig.rule,
+      imagesConfig.rule,
     ],
   },
 
