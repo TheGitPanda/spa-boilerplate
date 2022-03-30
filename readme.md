@@ -8,3 +8,4 @@ It's ready to provide you with SASS, modules + more TODO
 - Favicon bundling
 - Font bundling
 - HTML template bundling, with live reload?
+- SASS Module className shortening for huge optimisation
